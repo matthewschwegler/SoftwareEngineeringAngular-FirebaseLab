@@ -20,6 +20,8 @@ angular
             $scope.teammate.name = "";
             $scope.teammate.full_name = "";
             $scope.teammate.age = 0;
+            $scope.teammate.secret = "";
+            $scope.teammate.color = "";
         }
 
         $scope.myTeammateData.on('value', function (dataSnapshot) {

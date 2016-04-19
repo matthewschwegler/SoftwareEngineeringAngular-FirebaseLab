@@ -1,0 +1,23 @@
+.container {
+    background-color: lightgrey;
+}
+
+.jumbotron h1 {
+    display: block;
+    text-align: center;
+    color: green;
+}
+
+#inputForm {}
+
+#saveBtn {
+    display: block;
+    margin: 0 auto;
+}
+
+#jsonDisp {
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50x;
+    padding-bottom: 15px;
+}

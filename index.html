@@ -4,8 +4,7 @@
 
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-
+    <link href="style.css" rel="stylesheet">
     <title>Team Members</title>
 
 </head>
@@ -14,26 +13,51 @@
 
     <div class="container">
 
-        <label>Teammate First Name</label>
-        <input type="text" id="memberName" ng-model="teammate.name">
-        <br>
+        <div class="jumbotron" id="title">
 
-        <label>Teammate Full Name</label>
-        <input type="text" id="memberAge" ng-model="teammate.full_name">
-        <br>
+            <h1>My Teammates</h1>
 
-        <label>Teammate Age</label>
-        <input type="number" id="memberAge" ng-model="teammate.age">
-
-
-
-        <div>
-            <button class="btn btn-default" ng-click="saveMember()">
-                Save <span class="glyphicon glyphicon-ok"></span>
-            </button>
         </div>
 
+        <form id="inputForm">
+
+            <fieldset class="form-group">
+                <label>Teammate First Name</label>
+                <input type="text" class="form-control" placeholder="First Name" id="memberName" ng-model="teammate.name">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Teammate Full Name</label>
+                <input type="text" class="form-control" placeholder="Full Name" id="memberAge" ng-model="teammate.full_name">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Teammate Age</label>
+                <input type="number" class="form-control" placeholder="29" id="memberAge" ng-model="teammate.age">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Deepest Darkest Secret</label>
+                <input type="text" class="form-control" placeholder="In a previous life I was a hipster" id="memberSecret" ng-model="teammate.secret">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Least Favorite Color</label>
+                <input type="text" class="form-control" placeholder="blue" id="memberColor" ng-model="teammate.color">
+            </fieldset>
+
+            <button class="btn btn-default btn-lg" id="saveBtn" ng-click="saveMember()">
+                Save <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </form>
+
+
+
         <div>
+
+        </div>
+
+        <div id="jsonDisp">
             <pre> {{teammate | json}}</pre>
         </div>
 
@@ -43,6 +67,8 @@
                     <th>Member Name</th>
                     <th>Member Full Name</th>
                     <th>Age</th>
+                    <th>Dark Secret</th>
+                    <th>Hated Color</th>
                 </thead>
                 <tbody ng-repeat="teamMember in teammatesData">
                     {{teamMember.name}}
@@ -50,6 +76,8 @@
                         <td>{{teamMember.name}}</td>
                         <td>{{teamMember.full_name}}</td>
                         <td>{{teamMember.age}}</td>
+                        <td>{{teamMember.secret}}</td>
+                        <td>{{teamMember.color}}</td>
                     </tr>
                 </tbody>
             </table>
